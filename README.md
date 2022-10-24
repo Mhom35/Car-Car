@@ -21,3 +21,4 @@ microservice, here.
 
 Explain your models and integration with the inventory
 microservice, here.
+![alt text](assets/sales_microservice.png)
