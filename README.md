@@ -5,7 +5,12 @@ Team:
 * Person 1 - Which microservice?
 * Person 2 - Which microservice?
 
+
+How to run?
+
 ## Design
+
+![alt text](assets/DesignProjectBetaHR.png)
 
 ## Service microservice
 
