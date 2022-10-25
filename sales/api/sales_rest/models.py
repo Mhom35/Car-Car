@@ -16,7 +16,7 @@ class SalesPerson(models.Model):
         return self.name
 
     def get_api_url(self):
-        return reverse("api_show_salesPerson", kwargs={"pk": self.pk})
+        return reverse("api_sales_person", kwargs={"pk": self.pk})
 
 
 class Customer(models.Model):
