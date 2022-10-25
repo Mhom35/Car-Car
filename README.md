@@ -13,9 +13,11 @@ Team:
 3. Clone the repo using Terminal: `git clone repo-link`
 4. Change your working directory to the new cloned repo: `cd repo-name`
 5. Run the following commands:
+    ```
     docker volume create beta-data
     docker-compose build
     docker-compose up
+    ```
 6. When you run docker-compose up and if you're on macOS, you will see a warning about an environment variable named OS being missing. You can safely ignore this
 7. Read the project design and each microservices details below to understand how everything works
 
