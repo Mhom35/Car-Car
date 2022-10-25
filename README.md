@@ -5,7 +5,12 @@ Team:
 * Person 1 - Which microservice?
 * Person 2 - Which microservice?
 
+
+How to run?
+
 ## Design
+
+![alt text](assets/DesignProjectBetaHR.png)
 
 ## Service microservice
 
@@ -16,3 +21,4 @@ microservice, here.
 
 Explain your models and integration with the inventory
 microservice, here.
+![alt text](assets/sales_microservice.png)
