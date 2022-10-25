@@ -32,27 +32,27 @@ Team:
 Service Api keep track of service appointments for automobiles and their owners.
 
 * A technician have:
-    name
-    employee number
-    You can create a Technician via the link "Enter a technician" in navbar.
+    - name
+    - employee number
+    - You can create a Technician via the link "Enter a technician" in navbar.
 
 * A service appointment have:
-    VIN of the vehicle
-    name of the person to whom the vehicle belongs
-    the date and time of the appointment
-    the assigned technician
-    a reason for the service appointment
-    You can create an appointment via the link "Enter a service appointment" in navbar.
+    - VIN of the vehicle
+    - name of the person to whom the vehicle belongs
+    - the date and time of the appointment
+    - the assigned technician
+    - a reason for the service appointment
+    - You can create an appointment via the link "Enter a service appointment" in navbar.
 
 * List of appointments:
-    show a list of scheduled appointments contain all the details (cancelled and finished appointment not shown)
-    If the VIN of an automobile was at one time in Inventory, that appointment will be marked for "VIP treatment"
-    Each appointment in the list have a button that allows a service concierge to cancel the appointment, or to show that the service appointment has been finished
-    You can access the list of appointments via the link "Appointments" in navbar.
+    - show a list of scheduled appointments contain all the details (cancelled  - and finished appointment not shown)
+    - If the VIN of an automobile was at one time in Inventory, that appointment will be marked for "VIP treatment"
+    - Each appointment in the list have a button that allows a service concierge to cancel the appointment, or to show that the service appointment has been finished
+    - You can access the list of appointments via the link "Appointments" in navbar.
 
 * Service history:
-    show a list of service appointments for a specific VIN
-    You can access this via the link "Service history" in navbar. Then enter a VIN into the search box to show list of service appointments for that VIN.
+    - show a list of service appointments for a specific VIN
+    - You can access this via the link "Service history" in navbar. Then enter a VIN into the search box to show list of service appointments for that VIN.
 
 
 ## Sales microservice
