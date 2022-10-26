@@ -7,6 +7,7 @@ function MainPage() {
           The premiere solution for automobile dealership
           management!
         </p>
+        <iframe src="https://giphy.com/embed/9VgBdkACchXCKQUvsx" width="500" height="350" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/discoveryeurope-car-green-9VgBdkACchXCKQUvsx"></a></p>
       </div>
     </div>
   );

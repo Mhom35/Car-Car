@@ -27,7 +27,7 @@ function ManufacturerForm(props){
 
     return (
         <div className="row">
-            <div className="offset-3 col-6">
+            <div className="offset-3 col-6 p-3 mt-3">
                 <div className="shadow p-4 mt-4">
                 <h1>Create a new Manufacturer</h1>
                 <form id="create-shoe-form" onSubmit={handleSubmit}>

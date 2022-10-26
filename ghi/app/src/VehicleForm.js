@@ -35,7 +35,7 @@ function VehicleForm(props){
 
     useEffect(() => {
         const fetchManufacturers = async () => {
-            //get the bins data to map to later
+            //get the manufacturers data to map to later
             const url = 'http://localhost:8100/api/manufacturers/'
             const response = await fetch(url)
             const data = await response.json()
@@ -47,9 +47,9 @@ function VehicleForm(props){
 
     return (
         <div className="row">
-            <div className="offset-3 col-6">
+            <div className="offset-3 col-6 mt-3 p-3">
                 <div className="shadow p-4 mt-4">
-                <h1>Create a new Vehicle</h1>
+                <h1>Create a new vehicle model</h1>
                 <form id="create-shoe-form" onSubmit={handleSubmit}>
                   <div className="form-floating mb-3">
                     <input placeholder="name" value={name} onChange={(event) => setName(event.target.value)} required type="text" name="name" id="name" className="form-control"/>

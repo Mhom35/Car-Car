@@ -10,22 +10,29 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // );
 
 async function loadManufacturerVehicle() {
-  const response1 = await fetch('http://localhost:8100/api/manufacturers/');
+  const manufacturerResponse = await fetch('http://localhost:8100/api/manufacturers/');
   let manufacturerData = null;
   let vehicle = null;
-  if (response1.ok) {
-    manufacturerData = await response1.json();
+  let sales_record = null;
+  if (manufacturerResponse.ok) {
+    manufacturerData = await manufacturerResponse.json();
 
   } else (
-    console.error(response1)
+    console.error(manufacturerResponse)
   )
 
-  const response2 = await fetch('http://localhost:8100/api/models/')
-  if (response2.ok) {
-    vehicle = await response2.json();
+  const vehicleResponse = await fetch('http://localhost:8100/api/models/')
+  if (vehicleResponse.ok) {
+    vehicle = await vehicleResponse.json();
   } else (
-    console.error(response2)
+    console.error(vehicleResponse)
   )
+  const salesResponse = await fetch('http://localhost:8090/api/sales/')
+  if (salesResponse.ok) {
+    sales_record = await salesResponse.json()
+  } else{
+    console.error(salesResponse)
+  }
 
 
   root.render(
@@ -33,6 +40,7 @@ async function loadManufacturerVehicle() {
       <App
       manufacturers={manufacturerData.manufacturers}
       models={vehicle.models}
+      sales={sales_record.sales_record}
       />
     </React.StrictMode>
   );

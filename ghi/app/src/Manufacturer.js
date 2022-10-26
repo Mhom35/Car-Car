@@ -1,11 +1,9 @@
 function ManfacturerList(props) {
     const manufacturer = props.manufacturer
-    // console.log("this prints an array", Array.isArray(manufacturer))
-    // console.log("this shows an array", manufacturer)
 
     return (
     <>
-    <h1 className="p-2 text-center">Manufacturer</h1>
+    <h1 className="text-center mt-5 p-3">Manufacturers</h1>
     <table className="table table-striped">
         <thead>
         <tr>

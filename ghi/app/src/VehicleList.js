@@ -1,5 +1,4 @@
 import React, { useState, useEffect} from "react";
-// import { Link } from "react-router-dom";
 
 function VehicleList(props) {
   const [listData, setListData] = useState([]);
@@ -16,7 +15,7 @@ function VehicleList(props) {
   }, [])
 
   return (
-    <div className="row row-cols-1 row-cols-md-3 g-4 m-4">
+    <div className="row row-cols-1 row-cols-md-3 g-4 m-4 p-3">
       {listData.map( vechicle => {
         return (
           <div className="col" key={vechicle.href}>
