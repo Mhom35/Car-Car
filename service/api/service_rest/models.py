@@ -13,7 +13,7 @@ class Technician(models.Model):
 class Appointment(models.Model):
     vin = models.CharField(max_length=17)
     owner = models.CharField(max_length=200)
-    date = models.DateTimeField()
+    date = models.DateTimeField(null=True)
     reason = models.TextField()
     is_completed = models.BooleanField(default=False)
     is_vip = models.BooleanField(default=False)

@@ -115,15 +115,17 @@ def api_show_appointment(request, pk):
         return JsonResponse({'delete': count > 0})
     else:
         content = json.loads(request.body)
-        try:
-            technician_id = content['technician']
-            technician = Technician.objects.get(id=technician_id)
-            content['technician'] = technician
-        except Technician.DoesNotExist:
-            return JsonResponse(
-                {'message': 'Invalid technician id'},
-                status=400
-            )
+        if 'technician' in content:
+            try:
+                technician_id = content['technician']
+                technician = Technician.objects.get(id=technician_id)
+                content['technician'] = technician
+            except Technician.DoesNotExist:
+                return JsonResponse(
+                    {'message': 'Invalid technician id'},
+                    status=400
+                )
+
         Appointment.objects.filter(id=pk).update(**content)
         appointment = Appointment.objects.get(id=pk)
         return JsonResponse(
