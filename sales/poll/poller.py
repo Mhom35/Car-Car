@@ -34,7 +34,7 @@ def poll():
             getAutoMobile()
         except Exception as e:
             print(e, file=sys.stderr)
-        time.sleep(60)
+        time.sleep(10)
 
 
 if __name__ == "__main__":
