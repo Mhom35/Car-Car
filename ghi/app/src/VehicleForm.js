@@ -10,6 +10,7 @@ function VehicleForm(props){
         sumbit.preventDefault()
         const manufacturer_id = manufacturer
         const picture_url = picture
+
         const data  = {name, picture_url, manufacturer_id}
         const VehicleUrl = "http://localhost:8100/api/models/";
         const fetchConfig = {

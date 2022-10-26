@@ -5,8 +5,6 @@ function ManufacturerForm(props){
 
     const handleSubmit = async (sumbit) => {
         sumbit.preventDefault()
-        //note* if you want to have consistent naming convetion we would use camelCasing
-        // and pass that into our body "{max_attendees: maxAttendee}"
         const data  = {name}
         const ManufacturerUrl = "http://localhost:8100/api/manufacturers/";
         const fetchConfig = {
@@ -37,6 +35,7 @@ function ManufacturerForm(props){
                     <input placeholder="name" value={name} onChange={(event) => setName(event.target.value)} required type="text" name="name" id="name" className="form-control"/>
                     <label htmlFor="name">Name</label>
                   </div>
+                  <button className="btn btn-primary">Create</button>
                 </form>
                 </div>
             </div>

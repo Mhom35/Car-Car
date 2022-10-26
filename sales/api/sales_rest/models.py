@@ -38,7 +38,7 @@ class SalesRecord(models.Model):
         on_delete=models.PROTECT,
     )
     customer = models.ForeignKey(Customer, related_name="customer",on_delete=models.PROTECT)
-    price = models.PositiveIntegerField(unique=True)
+    price = models.PositiveIntegerField()
 
     def get_api_url(self):
         return reverse("api_show_salesrecord", kwargs={"pk": self.pk})

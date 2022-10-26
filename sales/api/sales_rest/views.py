@@ -29,7 +29,13 @@ class SalesListEncoder(ModelEncoder):
     }
 
     def get_extra_data(self, o):
-        return { "vin":o.Automobile.vin, "customer_name":o.customer.name, "customer_id":o.customer.id}
+        return {
+            "vin":o.Automobile.vin,
+            "customer_name":o.customer.name,
+            # "customer_id":o.customer.id,
+            "employeeID": o.SalesPerson.id,
+            "employeeName": o.SalesPerson.name,
+        }
 
 @require_http_methods(["GET", "POST"])
 def api_customer(request):
