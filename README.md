@@ -20,8 +20,9 @@ Team:
     ```
 6. When you run docker-compose up and if you're on macOS, you will see a warning about an environment variable named OS being missing. You can safely ignore this
 7. Read the project design and each microservices details below to understand how everything works
-8. Use the navbar to navigate throughout the website
-9. You can start adding some automobiles in your inventory by creating manufacturer, vehicle model, and automobile; then create the rest (customers, salesperson, technicians, etc.) as you go.
+8. Once all your containers in Docker is up and running, go to http://localhost:3000/ to see the web app.
+9. Use the navbar to navigate throughout the website
+10. You can start adding some automobiles in your inventory by creating manufacturer, vehicle model, and automobile; then create the rest (customers, salesperson, technicians, etc.) as you go.
 
 ## Design
 
