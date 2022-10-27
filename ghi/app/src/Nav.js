@@ -27,8 +27,8 @@ function Nav() {
                 <hr className="dropdown-divider" />
               </span>
               <li><NavLink style={({isActive}) =>{return {color:isActive ? "#ff9966":""}}} className="dropdown-item bg-secondary" to="automobiles">Automobiles</NavLink></li>
-              <li><NavLink style={({isActive}) =>{return {color:isActive ? "#ff9966":""}}} className="dropdown-item bg-secondary" to="/manufacturer">Manufacturer</NavLink></li>
-              <li><NavLink style={({isActive}) =>{return {color:isActive ? "#ff9966":""}}} className="dropdown-item bg-secondary" to="/vehicle">Vehicle Model</NavLink></li>
+              <li><NavLink style={({isActive}) =>{return {color:isActive ? "#ff9966":""}}} className="dropdown-item bg-secondary" to="/manufacturer">Manufacturers</NavLink></li>
+              <li><NavLink style={({isActive}) =>{return {color:isActive ? "#ff9966":""}}} className="dropdown-item bg-secondary" to="/vehicle">Vehicle Models</NavLink></li>
               <li>
                 <hr className="dropdown-divider" />
                 <span style={{color:"#99ff99"}}>
