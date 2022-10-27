@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 function SalesPersonForm(props){
     const [name, setName] = useState('');
     const [employeeID, setEmployeeID] = useState('');
+    const [fetchID, setFetchID ] = useState([]);
 
     const handleSubmit = async (submit) => {
         submit.preventDefault();
@@ -16,16 +17,28 @@ function SalesPersonForm(props){
                 'Content-Type': 'application/json',
             },
         }
-        const response = await fetch(url, fetchConfig);
-        if (response.ok){
-            const newEmployee = await response.json();
-            //get rid of warning message
-            const EmployeeIDexist = document.getElementById('alert')
-            EmployeeIDexist.classList.add("d-none")
-            //clear form after 200 post
-            clearState()
+        //to control for weird useState error with database (problem w Sales Man creation)
+        let clashWithExistingID = false
+        for (let id of fetchID){
+            if (employeeID == id.employeeID){
+                clashWithExistingID = true
+            }
+        }
+        if (!(clashWithExistingID)){
+            const response = await fetch(url, fetchConfig);
+            if (response.ok){
+                const newEmployee = await response.json();
+                //get rid of warning message
+                const EmployeeIDexist = document.getElementById('alert')
+                EmployeeIDexist.classList.add("d-none")
+                //clear form after 200 post
+                clearState()
+            }else{
+                // if employee already exist then we alert the user
+                console.error(response)
+
+            }
         }else{
-            // if employee already exist then we alert the user
             const EmployeeIDexist = document.getElementById('alert')
             EmployeeIDexist.classList.remove("d-none")
 
@@ -36,6 +49,18 @@ function SalesPersonForm(props){
         setName("")
         setEmployeeID("")
     }
+
+    useEffect(() =>{
+        const fetchEmployeesID = async () =>{
+            const response = await fetch("http://localhost:8090/api/sales_person/")
+            const data =  await response.json()
+            setFetchID(data.salesPerson)
+        }
+
+        fetchEmployeesID()
+    }, [])
+
+
 
     return (
     <div className="container p-5">
