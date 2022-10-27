@@ -9,8 +9,8 @@ function SalesRecordForm(props){
     const [ automobile, setAutomobile] = useState('')
     const [ automobiles, setAutombiles] = useState([])
 
-    const handleSubmit = async (sumbit) => {
-        sumbit.preventDefault()
+    const handleSubmit = async (submit) => {
+        submit.preventDefault()
         const SalesPerson_id = salesPerson
         const customer_id = customer
         //autos.vin was the value passed into form
