@@ -33,7 +33,7 @@ class SalesListEncoder(ModelEncoder):
             "vin":o.Automobile.vin,
             "customer_name":o.customer.name,
             # "customer_id":o.customer.id,
-            "employeeID": o.SalesPerson.id,
+            "employeeID": o.SalesPerson.employeeID,
             "employeeName": o.SalesPerson.name,
         }
 
@@ -81,15 +81,26 @@ def api_list_sales_record(request, car_vo_id=None):
 
         try:
             # does the car even exist?
-            bin_href = f'/api/automobiles/{car_vo_id}/'
-            car_id = AutoMobileVO.objects.get(import_href=bin_href)
+            car_href = f'/api/automobiles/{car_vo_id}/'
+            car_id = AutoMobileVO.objects.get(import_href=car_href)
             content["Automobile"] = car_id
+            SalesPerson_obj = SalesPerson.objects.get(employeeID=content["SalesPerson_id"])
+            Customer_obj = Customer.objects.get(id=content["customer_id"])
+            # delete the id pass into content
+            content.pop("SalesPerson_id")
+            content.pop("customer_id")
+            #set content to match salesRecord model
+            content["SalesPerson"] = SalesPerson_obj
+            content["customer"] = Customer_obj
+
 
         except AutoMobileVO.DoesNotExist:
             return JsonResponse(
                 {"message": "Invalid car vin"},
                 status=400,
             )
+
+
         new_sale_record = SalesRecord.objects.create(**content)
         return JsonResponse(
             new_sale_record,
