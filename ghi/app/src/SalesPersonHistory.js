@@ -48,7 +48,7 @@ function SalesPersonHistoryList(props) {
                 return(
                     <tr key={sale.id}>
                     <td>{ sale.SalesPerson.name}</td>
-                    <td>{ salesRep}</td>
+                    <td>{ sale.customer_name}</td>
                     <td>{ sale.vin}</td>
                     <td>${ sale.price}</td>
                     </tr>

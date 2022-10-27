@@ -32,7 +32,6 @@ function ServiceList(){
       .then(data => {
         counter++;
         setCounterCheck(counter);
-        console.log(data)
       });
   }
 
@@ -48,7 +47,6 @@ function ServiceList(){
       .then(data => {
         counter++;
         setCounterCheck(counter);
-        console.log(data)
       });
   }
 

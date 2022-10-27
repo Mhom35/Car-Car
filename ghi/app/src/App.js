@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './MainPage';
-import Nav from './ServiceNav';
+import Nav from './Nav';
 import AutosList from './AutosList';
 import AutoForm from './AutoForm';
 import TechnicianForm from './TechForm';

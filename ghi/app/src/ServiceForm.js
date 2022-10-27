@@ -46,7 +46,6 @@ function AppointmentForm() {
     });
     if (response.ok) {
       const newAppt = await response.json();
-      console.log(newAppt);
       clearState();
     }
   }

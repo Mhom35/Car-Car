@@ -6,6 +6,7 @@ function SalesPersonForm(props){
 
     const handleSubmit = async (submit) => {
         submit.preventDefault();
+        setEmployeeID(parseInt(employeeID));
         const data = {name, employeeID};
         const url = "http://localhost:8090/api/sales_person/"
         const fetchConfig = {
