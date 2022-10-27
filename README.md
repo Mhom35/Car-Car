@@ -88,7 +88,23 @@ Service Api keep track of service appointments for automobiles and their owners.
     - You can access this via the link "Services > Service History" in navbar. Then enter a VIN into the search box to show list of service appointments for that VIN.
 
 ## Sales microservice
-
-Explain your models and integration with the inventory
-microservice, here.
 ![alt text](assets/sales_microservice.png)
+
+Sales microservice keeps track of customers, sales reps, and sales record
+
+
+* Creation/list of a SalesRep
+    - Requires input of name and a unique employeeID to create
+    - Get request will send back name and employeeID
+    - To access SalesRep information send a get request to "http://localhost:8090/api/sales_person/"
+
+* Creation/list of Customers
+    - Requires input of name, address, and phone_num (formatting is handled in the frontend)
+    - Get request will list an array of objects that contains name, address, phone_num, and customer id
+    - To access Customer information send a get request to "http://localhost:8090/api/customer/"
+
+* List of Sales Record / Creation of Sales Record
+    - Requires: An automobile(with associated vin) , customer, sales person to be made before creating a sales record
+    - Creation of a sales record requires employeeID (coming from SalesPerson model), customer (customer id from customer model) and vin number(from AutoMobile VO that comes from our poller)
+    - A record will send back price, id(of sales record), SalesPerson object model, automobile vin, customer name, and sales person name and employee ID (for ease of use)
+    - To access sales record send a get request to "http://localhost:8090/api/sales"
