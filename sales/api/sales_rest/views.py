@@ -99,7 +99,7 @@ def api_list_sales_record(request, car_vo_id=None):
                 {"message": "Invalid car vin"},
                 status=400,
             )
-        print("this is the content--->" , content)
+
 
         new_sale_record = SalesRecord.objects.create(**content)
         return JsonResponse(
