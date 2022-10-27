@@ -47,7 +47,7 @@ function CustomerForm(props){
                   <div className="form-floating mb-3">
                     <input placeholder="Format: 123-45-678" value={phoneNumber} onChange={(event) => setPhone(event.target.value)} required type="tel" name="phoneNumber" id="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="form-control"/>
                     <label htmlFor="phoneNumber">Phone Number</label>
-                    <small style={{padding:"3px",fontSize:"10px"}}>Ex. Format: 123-456-7890</small>
+                    <small style={{padding:"3px",fontSize:"10px"}}>Ex. Format: 123-456-6789</small>
                   </div>
                   <button className="btn btn-primary">Create</button>
                 </form>
