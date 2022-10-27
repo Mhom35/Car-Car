@@ -6,8 +6,7 @@ let counter = 0;
 function ServiceList(){
   const [appt, setAppt] = useState([]);
   const [counterCheck, setCounterCheck] = useState('');
-
-
+  
   useEffect(() => {
     fetch('http://localhost:8080/api/appointments/')
       .then(response => response.json())
@@ -57,6 +56,7 @@ function ServiceList(){
         <thead>
           <tr>
             <th>VIP</th>
+            <th>VIN</th>
             <th>Customer Name</th>
             <th>Date</th>
             <th>Time</th>
@@ -69,9 +69,8 @@ function ServiceList(){
             if (!(appt.is_completed)) {
               return (
                 <tr key={appt.href}>
-                  {/* {appt.is_vip ? <td><b>VIP</b></td> : <td></td>} */}
                   {appt.is_vip ? <td><img style={{height: "25px", width: "25px"}} src="https://cdn-icons-png.flaticon.com/512/4142/4142160.png" alt="oops.." /></td> : <td></td>}
-
+                  <td>{appt.vin}</td>
                   <td>{appt.owner}</td>
                   <td>{getDate(appt.date)}</td>
                   <td>{getTime(appt.date)}</td>
