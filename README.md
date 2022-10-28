@@ -63,7 +63,9 @@ Inventory API keep track of the automobile inventory for the automobile dealersh
 
 ## Service microservice
 
-![alt text](assets/Full-Service-model.png)
+![alt text](assets/1-Full-Service-model.png)
+![alt text](assets/2-Full-Service-model.png)
+![alt text](assets/3-Full-Service-model.png)
 
 Service Api keep track of service appointments for automobiles and their owners.
 
