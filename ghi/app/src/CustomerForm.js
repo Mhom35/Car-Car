@@ -35,13 +35,13 @@ function CustomerForm(props){
             <div className="offset-3 col-6 mt-3 p-3">
                 <div className="shadow p-4 mt-4 p-3">
                 <h1>Sign up for customers</h1>
-                <form id="create-shoe-form" onSubmit={handleSubmit}>
+                <form id="create-shoe-form"  onSubmit={handleSubmit}>
                   <div className="form-floating mb-3">
-                    <input placeholder="name" value={name} onChange={(event) => setName(event.target.value)} required type="text" name="name" id="name" className="form-control"/>
+                    <input placeholder="name" autoComplete="nahbro" value={name} onChange={(event) => setName(event.target.value)} required type="text" name="name" id="name" className="form-control"/>
                     <label htmlFor="name">Name</label>
                   </div>
                   <div className="form-floating mb-3">
-                    <input placeholder="address" value={address} onChange={(event) => setAddress(event.target.value)} required type="text" name="address" id="address" className="form-control"/>
+                    <input placeholder="address"  value={address} onChange={(event) => setAddress(event.target.value)} required type="text" name="address" id="address" className="form-control"/>
                     <label htmlFor="address">Address</label>
                   </div>
                   <div className="form-floating mb-3">

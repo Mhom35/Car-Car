@@ -26,7 +26,7 @@ Team:
 
 ## Design
 
-![alt text](assets/DesignProjectBetaHR.png)
+![alt text](assets/fulldesign.png)
 
 ## Inventory microservice
 
@@ -91,7 +91,7 @@ Service Api keep track of service appointments for automobiles and their owners.
     - You can access this via the link "Services > Service History" in navbar. Then enter a VIN into the search box to show list of service appointments for that VIN.
 
 ## Sales microservice
-![alt text](assets/sales_microservice.png)
+![alt text](assets/newSalesDesign.png)
 
 Sales microservice keeps track of customers, sales reps, and sales record
 
