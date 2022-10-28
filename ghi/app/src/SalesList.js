@@ -1,5 +1,19 @@
+import React, {useEffect, useState} from 'react';
+
 function SalesList(props) {
-    const sales = props.sales
+    const [ sales, setSales ] = useState([]);
+
+    useEffect(() => {
+        const getData = async () => {
+            const response = await fetch('http://localhost:8090/api/sales/')
+            if(response.ok){
+                const data = await response.json();
+                setSales(data.sales_record)
+                }
+            }
+            getData()
+        }, [])
+
     return (
     <>
     <h1 className="p-2 text-center p-3 mt-5">Sales Record</h1>

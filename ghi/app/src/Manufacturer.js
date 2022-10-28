@@ -1,5 +1,18 @@
+import React, {useEffect, useState} from 'react';
+
 function ManfacturerList(props) {
-    const manufacturer = props.manufacturer
+    const [manufacturer, setManufacturer] = useState([]);
+
+    useEffect(() => {
+    const getData = async () => {
+        const response = await fetch('http://localhost:8100/api/manufacturers/')
+        if(response.ok){
+            const data = await response.json();
+            setManufacturer(data.manufacturers)
+            }
+        }
+        getData()
+    }, [])
 
     return (
     <>

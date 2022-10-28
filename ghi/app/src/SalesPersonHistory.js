@@ -1,17 +1,26 @@
 import React, {useEffect, useState} from 'react';
 
 function SalesPersonHistoryList(props) {
-    const sales = props.sales
+    let [salesRep, setSalesPerson ] = useState('');
+    let [salesReps, setSalesReps ] = useState([]);
+    let [salesHistory, setSalesHistory ] = useState([]);
 
-    let [salesRep, setSalesPerson ] = useState('')
-    let [salesReps, setSalesReps ] = useState([])
+    useEffect(() => {
+        const getSalesHistory = async () => {
+            const SalesRecord = 'http://localhost:8090/api/sales/'
+            const response = await fetch(SalesRecord)
+            const dataSalesRecord = await response.json()
+            setSalesHistory(dataSalesRecord.sales_record)
+        }
+        getSalesHistory()
+    }, [])
 
     useEffect(() => {
         const getSalesReps = async () => {
             const SalesPeopleUrl = 'http://localhost:8090/api/sales_person/'
             const response = await fetch(SalesPeopleUrl)
-            const data = await response.json()
-            setSalesReps(data.salesPerson)
+            const dataSalesRep = await response.json()
+            setSalesReps(dataSalesRep.salesPerson)
         }
         getSalesReps()
     }, [])
@@ -42,7 +51,7 @@ function SalesPersonHistoryList(props) {
         </thead>
         <tbody>
         {/* ?((ternary) operator) first asks if any salesrecords actually exists */}
-        {sales?.map(sale => {
+        {salesHistory?.map(sale => {
             if(sale.employeeID === filteredEmployeeID){
                 hadSales = true
                 return(
